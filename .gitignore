@@ -178,3 +178,6 @@ storybook-static/
 
 # Sentry
 .sentryclirc
+.env
+.env.local
+dev.db
