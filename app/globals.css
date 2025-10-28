@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 18px;
+}
+
+html[data-theme='dark'] {
+  color-scheme: dark;
+  background: #06060c;
+  color: #f4f4ff;
+}
+
+html[data-theme='light'] {
+  color-scheme: light;
+  background: #f5f5ff;
+  color: #0b0b12;
+}
+
+body {
+  font-family: var(--font-primary), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 92, 252, 0.6);
+  border-radius: 9999px;
+}
+
+.section-shell {
+  @apply relative mx-auto w-full max-w-6xl px-6 py-16 sm:px-8 lg:px-12;
+}
+
+.section-heading {
+  @apply text-3xl font-semibold tracking-tight sm:text-4xl;
+}
+
+.section-subtext {
+  @apply mt-4 max-w-2xl text-base leading-relaxed text-zinc-600 dark:text-zinc-300;
+}
+
+.glass-card {
+  @apply rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl backdrop-blur;
+}
+
+html[data-theme='light'] .glass-card {
+  @apply border-black/5 bg-white/70;
+}
