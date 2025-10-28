@@ -53,7 +53,23 @@ export function LandingPage() {
           <span className="text-xs font-medium uppercase tracking-[0.28em] text-brand">OnReal</span>
           <span className="text-lg font-semibold">Operating System for Real World Assets</span>
         </div>
-        <ThemeToggle />
+        <div className="flex items-center gap-3">
+          <Link
+            id="header-login"
+            href="/login"
+            className="hidden rounded-full border border-zinc-200 px-5 py-2 text-sm font-medium text-zinc-900 transition-colors hover:border-brand hover:text-brand dark:border-white/20 dark:text-white sm:inline-flex"
+          >
+            Sign in
+          </Link>
+          <Link
+            id="header-register"
+            href="/register"
+            className="hidden items-center justify-center rounded-full bg-brand px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-accent sm:inline-flex"
+          >
+            Create account
+          </Link>
+          <ThemeToggle />
+        </div>
       </div>
 
       <main id="landing-main" className="flex flex-col gap-20 pb-20">
@@ -69,11 +85,11 @@ export function LandingPage() {
           </p>
           <div id="hero-cta-group" className="flex flex-wrap items-center gap-4 pt-2">
             <Link
-              id="cta-request-access"
-              href="https://onreal.example.com/request-access"
+              id="cta-register"
+              href="/register"
               className="inline-flex items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-accent"
             >
-              Request Access
+              Create account
             </Link>
             <Link
               id="cta-view-docs"
@@ -81,6 +97,13 @@ export function LandingPage() {
               className="inline-flex items-center justify-center rounded-full border border-zinc-200 px-6 py-3 text-sm font-semibold text-zinc-900 transition-colors hover:border-brand hover:text-brand dark:border-white/20 dark:text-white"
             >
               View Documentation
+            </Link>
+            <Link
+              id="cta-login"
+              href="/login"
+              className="text-sm font-semibold text-brand transition-colors hover:text-brand/80"
+            >
+              Already building? Sign in →
             </Link>
           </div>
         </section>
@@ -145,7 +168,7 @@ export function LandingPage() {
                 <Link
                   id={link.id}
                   key={link.id}
-                  href={link.href}
+                  href={link.href as any}
                   className="flex flex-col rounded-2xl border border-zinc-200 bg-white p-6 transition-colors hover:border-brand dark:border-white/15 dark:bg-white/5"
                 >
                   <span className="text-sm uppercase tracking-[0.28em] text-brand">{link.title}</span>
@@ -167,13 +190,13 @@ export function LandingPage() {
       >
         <div id="footer-brand">Copyright {new Date().getFullYear()} OnReal Labs. All rights reserved.</div>
         <div id="footer-links" className="flex items-center gap-6">
-          <Link id="footer-link-privacy" href="https://onreal.example.com/privacy" className="transition-colors hover:text-brand">
+          <Link id="footer-link-privacy" href={"https://onreal.example.com/privacy" as any} className="transition-colors hover:text-brand">
             Privacy
           </Link>
-          <Link id="footer-link-terms" href="https://onreal.example.com/terms" className="transition-colors hover:text-brand">
+          <Link id="footer-link-terms" href={"https://onreal.example.com/terms" as any} className="transition-colors hover:text-brand">
             Terms
           </Link>
-          <Link id="footer-link-status" href="https://status.onreal.example.com" className="transition-colors hover:text-brand">
+          <Link id="footer-link-status" href={"https://status.onreal.example.com" as any} className="transition-colors hover:text-brand">
             Status
           </Link>
         </div>
