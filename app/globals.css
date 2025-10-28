@@ -18,6 +18,18 @@ html[data-theme='light'] {
   color: #0b0b12;
 }
 
+body,
+.bg-dashboard-light {
+  background: linear-gradient(180deg, #f5f5ff 0%, #eef1ff 45%, #ffffff 100%);
+}
+
+.dark body,
+.dark .bg-dashboard-light,
+.dark .bg-dashboard-dark {
+  background: radial-gradient(circle at top, rgba(124, 92, 252, 0.15), transparent 55%), #05050b;
+  color: #f5f5ff;
+}
+
 body {
   font-family: var(--font-primary), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   min-height: 100vh;
