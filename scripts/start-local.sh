@@ -12,6 +12,8 @@ if [[ -f "$PID_FILE" ]]; then
   if ps -p "$EXISTING_PID" > /dev/null 2>&1; then
     echo "Next.js dev server already running (PID $EXISTING_PID)."
     echo "Logs: $LOG_FILE"
+    echo "Access: http://localhost:3000"
+    echo "Note: If you see 502 errors, disable proxy settings or use --noproxy with curl"
     exit 0
   fi
   rm -f "$PID_FILE"
@@ -27,3 +29,5 @@ echo "Starting Next.js dev server..."
 PID="$(cat "$PID_FILE")"
 echo "Next.js dev server started (PID $PID)."
 echo "Logs: $LOG_FILE"
+echo "Access: http://localhost:3000"
+echo "Note: If you see 502 errors, disable proxy settings or use --noproxy with curl"
